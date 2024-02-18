@@ -10,12 +10,12 @@ document.getElementById('rowName').innerHTML = rowName;
 
 let seatRowOneButtonsHTML = "";
 for (let index = 0; index < seatRowOne.length; index++) {
-    seatRowOneButtonsHTML += `<button id="${seatRowOne[index]}"class="w-16 lg:w-20 h-14 bg-[#F7F8F8] rounded-xl flex items-center justify-center">${seatRowOne[index]}</button>`;
+    seatRowOneButtonsHTML += `<button onclick="changeButtonColor('${seatRowOne[index]}')" id="${seatRowOne[index]}"class="seat-button w-16 lg:w-20 h-14 bg-[#F7F8F8] rounded-xl flex items-center justify-center">${seatRowOne[index]}</button>`;
 }
 document.getElementById('seatsOne').innerHTML = seatRowOneButtonsHTML;
 
 let seatRowTwoButtonsHTML = "";
 for (let index = 0; index < seatRowTwo.length; index++) {
-    seatRowTwoButtonsHTML += `<button id="${seatRowTwo[index]}"class="w-16 lg:w-20 h-14 bg-[#F7F8F8] rounded-xl flex items-center justify-center">${seatRowTwo[index]}</button>`;
+    seatRowTwoButtonsHTML += `<button onclick="changeButtonColor('${seatRowTwo[index]}')" id="${seatRowTwo[index]}"class="seat-button w-16 lg:w-20 h-14 bg-[#F7F8F8] rounded-xl flex items-center justify-center">${seatRowTwo[index]}</button>`;
 }
 document.getElementById('seatsTwo').innerHTML = seatRowTwoButtonsHTML;
