@@ -215,7 +215,7 @@
                 Paribahan, ensuring a hassle-free booking experience.</p>
         </div>
         <section class="max-w-[1170px] mx-auto mt-10 px-6 lg:px-12">
-            <div class="flex flex-col lg:flex-row w-full mb-6 px-3 lg:px-6 rounded-3xl bg-white">
+            <div class="flex flex-col lg:flex-row w-full mb-6 p-3 lg:p-6 lg:py-0 rounded-3xl bg-white">
                 <div class="py-3 lg:py-6 space-y-6">
                     <div class="flex flex-col lg:flex-row lg:justify-between items-center space-y-6">
                         <div class="flex items-center gap-3">
@@ -298,8 +298,9 @@
                     <p class="text-xl font-semibold text-[#03071299]">Per Seat</p>
                 </div>
             </div>
-            <div class="py-3 lg:py-6 space-y-6 px-3 lg:px-6 rounded-3xl bg-white flex items-start">
-                <div class="w-fit space-y-4 pr-6 border-r-2 border-r-[#0307124D] border-dashed">
+            <div class="py-3 lg:py-6 px-3 lg:px-6 rounded-3xl bg-white flex flex-col lg:flex-row justify-between space-y-10 lg:space-y-0">
+                <!-- select your seat -->
+                <div class="w-fit mx-auto lg:mx-0 space-y-4">
                     <h1 class="text-2xl font-semibold">Select Your Seat</h1>
                     <hr class="border border-dashed border-[#03071233]">
                     <div class="flex items-center justify-between">
@@ -348,71 +349,44 @@
                         </div>
                     </div>
                     <hr class="border border-dashed border-[#03071233]">
-                    <div class="flex justify-end">
-                        <button class="w-28 h-14 bg-[#0307121A] rounded-xl flex items-center justify-center">
-                            <svg width="32.000000" height="32.000000" viewBox="0 0 32 32" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <defs>
-                                    <clipPath id="clip6_130">
-                                        <rect id="tabler-icon-steering-wheel" width="32.000000" height="32.000000"
-                                            fill="white" fill-opacity="0" />
-                                    </clipPath>
-                                </defs>
-                                <rect id="tabler-icon-steering-wheel" width="32.000000" height="32.000000"
-                                    fill="#FFFFFF" fill-opacity="0" />
-                                <g clip-path="url(#clip6_130)">
-                                    <path id="Vector"
-                                        d="M4.91333 20.5922C5.5166 22.0481 6.40039 23.371 7.51465 24.4853C8.62891 25.5996 9.9519 26.4835 11.4077 27.0865C12.8638 27.6896 14.4241 28 16 28C17.5759 28 19.1362 27.6896 20.5923 27.0865C22.0481 26.4835 23.3711 25.5996 24.4854 24.4853C25.5996 23.371 26.4834 22.0481 27.0867 20.5922C27.6897 19.1363 28 17.5759 28 16C28 14.4241 27.6897 12.8637 27.0867 11.4078C26.4834 9.9519 25.5996 8.62903 24.4854 7.51471C23.3711 6.40042 22.0481 5.51651 20.5923 4.91345C19.1362 4.31039 17.5759 4 16 4C14.4241 4 12.8638 4.31039 11.4077 4.91345C9.9519 5.51651 8.62891 6.40042 7.51465 7.51471C6.40039 8.62903 5.5166 9.9519 4.91333 11.4078C4.3103 12.8637 4 14.4241 4 16C4 17.5759 4.3103 19.1363 4.91333 20.5922ZM14.1145 17.8856C14.6145 18.3857 15.2927 18.6667 16 18.6667C16.7073 18.6667 17.3855 18.3857 17.8855 17.8856C18.3857 17.3855 18.6667 16.7072 18.6667 16C18.6667 15.2928 18.3857 14.6145 17.8855 14.1144C17.3855 13.6143 16.7073 13.3333 16 13.3333C15.2927 13.3333 14.6145 13.6143 14.1145 14.1144C13.6143 14.6145 13.3333 15.2928 13.3333 16C13.3333 16.7072 13.6143 17.3855 14.1145 17.8856ZM16 18.6667L16 28M13.3333 16L4.33325 13.3333M18.6667 16L27.6667 13.3333"
-                                        stroke="#030712" stroke-opacity="0.700000" stroke-width="2.000000"
-                                        stroke-linejoin="round" stroke-linecap="round" />
-                                </g>
-                            </svg>
-                        </button>
-                    </div>
 
                     <!-- seats -->
-                    <div class="inter flex gap-10">
-                        <div id="rowName" class="grid"></div>
-                        <div id="seatsOne" class="grid grid-cols-2 gap-5"></div>
-                        <div id="seatsTwo" class="grid grid-cols-2 gap-5"></div>
+                    <div class="w-fit">
+                        <div class="flex justify-end mb-2 lg:mb-5">
+                            <button class="w-16 lg:w-20 h-14 bg-[#0307121A] rounded-xl flex items-center justify-center">
+                                <svg width="32.000000" height="32.000000" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <clipPath id="clip6_130">
+                                            <rect id="tabler-icon-steering-wheel" width="32.000000" height="32.000000"
+                                                fill="white" fill-opacity="0" />
+                                        </clipPath>
+                                    </defs>
+                                    <rect id="tabler-icon-steering-wheel" width="32.000000" height="32.000000"
+                                        fill="#FFFFFF" fill-opacity="0" />
+                                    <g clip-path="url(#clip6_130)">
+                                        <path id="Vector"
+                                            d="M4.91333 20.5922C5.5166 22.0481 6.40039 23.371 7.51465 24.4853C8.62891 25.5996 9.9519 26.4835 11.4077 27.0865C12.8638 27.6896 14.4241 28 16 28C17.5759 28 19.1362 27.6896 20.5923 27.0865C22.0481 26.4835 23.3711 25.5996 24.4854 24.4853C25.5996 23.371 26.4834 22.0481 27.0867 20.5922C27.6897 19.1363 28 17.5759 28 16C28 14.4241 27.6897 12.8637 27.0867 11.4078C26.4834 9.9519 25.5996 8.62903 24.4854 7.51471C23.3711 6.40042 22.0481 5.51651 20.5923 4.91345C19.1362 4.31039 17.5759 4 16 4C14.4241 4 12.8638 4.31039 11.4077 4.91345C9.9519 5.51651 8.62891 6.40042 7.51465 7.51471C6.40039 8.62903 5.5166 9.9519 4.91333 11.4078C4.3103 12.8637 4 14.4241 4 16C4 17.5759 4.3103 19.1363 4.91333 20.5922ZM14.1145 17.8856C14.6145 18.3857 15.2927 18.6667 16 18.6667C16.7073 18.6667 17.3855 18.3857 17.8855 17.8856C18.3857 17.3855 18.6667 16.7072 18.6667 16C18.6667 15.2928 18.3857 14.6145 17.8855 14.1144C17.3855 13.6143 16.7073 13.3333 16 13.3333C15.2927 13.3333 14.6145 13.6143 14.1145 14.1144C13.6143 14.6145 13.3333 15.2928 13.3333 16C13.3333 16.7072 13.6143 17.3855 14.1145 17.8856ZM16 18.6667L16 28M13.3333 16L4.33325 13.3333M18.6667 16L27.6667 13.3333"
+                                            stroke="#030712" stroke-opacity="0.700000" stroke-width="2.000000"
+                                            stroke-linejoin="round" stroke-linecap="round" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="inter flex gap-5 lg:gap-8">
+                            <div id="rowName" class="grid"></div>
+                            <div id="seatsOne" class="grid grid-cols-2 gap-2 lg:gap-5"></div>
+                            <div id="seatsTwo" class="grid grid-cols-2 gap-2 lg:gap-5"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="w-fit space-y-4 pl-6">
+                <div class="border-l-2 border-l-[#0307124D] border-dashed"></div>
+                <!-- selected seat -->
+                <div class="w-full lg:w-fit space-y-4">
                     <h1 class="text-2xl font-semibold">Selected Seat</h1>
                     <hr class="border border-dashed border-[#03071233]">
-                    <div class="w-[430px] bg-[#F7F8F8] rounded-xl inter text-base p-8 space-y-6">
-                        <!-- <table class="w-full">
-                            <thead class="border-b border-b-dashed border-b-[#03071233]">
-                                <tr class="flex justify-between font-semibold">
-                                    <th>Seat <span class="px-2 bg-[#1DD100] rounded-md text-sm text-white">2</span></th>
-                                    <th class="pr-14">Class</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="flex justify-between font-normal">
-                                    <td>C2</td>
-                                    <td>Economy</td>
-                                    <td>550</td>
-                                </tr>
-                                <tr class="flex justify-between font-normal">
-                                    <td>C2</td>
-                                    <td>Economy</td>
-                                    <td>550</td>
-                                </tr>
-                                <tr class="flex justify-between font-normal">
-                                    <td>C2</td>
-                                    <td>Economy</td>
-                                    <td>550</td>
-                                </tr>
-                                <tr class="flex justify-between font-normal">
-                                    <td>C2</td>
-                                    <td>Economy</td>
-                                    <td>550</td>
-                                </tr>
-                            </tbody>
-                        </table> -->
-                        <ul class="w-full space-y-3 font-normal">
+                    <div class="bg-[#F7F8F8] rounded-xl inter p-8">
+                        <ul class="space-y-3 text-base font-normal">
                             <li class="flex justify-between font-semibold">
                                 <span>Seat <span class="px-2 bg-[#1DD100] rounded-md text-sm text-white">2</span></span>
                                 <span class="pr-14">Class</span>
@@ -445,14 +419,40 @@
                                 <span>BDT 1100</span>
                             </li>
                             <li class="bg-white p-3 flex justify-between items-center rounded-xl">
-                                <input class="h-10 pl-5" type="text" placeholder="Have any coupon?">
-                                <button class="self-end bg-[#1DD100] w-20 h-10 rounded-lg text-white text-base font-semibold inter">Apply</button>
+                                <input class="w-full h-10 pl-2 lg:pl-5" type="text" placeholder="Have any coupon?">
+                                <button
+                                    class="bg-[#1DD100] w-20 h-10 rounded-lg text-white text-base font-semibold inter">Apply</button>
                             </li>
                             <li class="flex justify-between font-semibold">
                                 <span>Grand Total</span>
                                 <span>BDT 1100</span>
                             </li>
                         </ul>
+                    </div>
+
+                    <!-- input form -->
+                    <div class="w-full space-y-4">
+                        <div class="inter text-base space-y-4">
+                            <h1 class="font-bold">Passenger Name*</h1>
+                            <input class="pl-6 w-full h-16 border-[#0307121A] border rounded-xl" type="text"
+                                placeholder="Enter your name">
+                        </div>
+                        <div class="inter text-base space-y-4">
+                            <h1 class="font-bold">Phone Number*</h1>
+                            <input class="pl-6 w-full h-16 border-[#0307121A] border rounded-xl" type="text"
+                                placeholder="Enter your phone number">
+                        </div>
+                        <div class="inter text-base space-y-4">
+                            <h1 class="font-bold">Email ID</h1>
+                            <input class="pl-6 w-full h-16 border-[#0307121A] border rounded-xl" type="text"
+                                placeholder="Enter your email id">
+                        </div>
+                        <button
+                            class="pl-6 w-full h-16 bg-[#1DD100] rounded-xl font-extrabold text-xl raleway text-white">Next</button>
+                        <div class="flex flex-col lg:flex-row items-center justify-around">
+                            <p class="text-[#03071299] underline font-normal text-base">Terms and Conditions</p>
+                            <p class="text-[#03071299] underline font-normal text-base">Cancellation Policy</p>
+                        </div>
                     </div>
                 </div>
             </div>
