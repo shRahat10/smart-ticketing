@@ -113,14 +113,6 @@ function addCoupon() {
     }
 }
 
-// function checkPhoneNumber() {
-//     let phoneNumber = document.getElementById('phone-number').value;
-//     if (selectedSeatCount > 0 && phoneNumber !== '') {
-//         document.getElementById('success-button').removeAttribute('disabled');
-//         document.getElementById('success-button').classList.add('bg-[#1DD100]');
-//         document.getElementById('success-button').classList.remove('bg-[#03071233]');
-//     }
-// }
 function checkPhoneNumber() {
     let phoneNumberInput = document.getElementById('phone-number');
     let successButton = document.getElementById('success-button');
