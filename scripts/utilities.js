@@ -6,9 +6,7 @@ let grandPrice = parseFloat(document.getElementById('grand-price'));
 let seatLeft = parseFloat(document.getElementById('seat-left').innerText);
 let selectedSeatCount = parseInt(document.getElementById('selected-seat-count').innerText);
 
-
-
-function changeButtonColor(elementId) {
+function seatSelect(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add('bg-[#1DD100]', 'text-white');
     element.classList.remove('bg-[#F7F8F8]');
@@ -19,6 +17,7 @@ function changeButtonColor(elementId) {
     selectedSeatCountF();
     totalPriceF();
     grandPriceF();
+    checkPhoneNumber();
 
     if (selectedSeatCount === 4) {
         disableButtons();
@@ -55,6 +54,21 @@ function disableButtons() {
     }
 }
 
+function enableButtons() {
+    const allButtons = document.querySelectorAll('.seat-button');
+    for (const button of allButtons) {
+        button.disabled = false;
+    }
+}
+
+function removeButtonColor() {
+    const allButtons = document.querySelectorAll('.seat-button');
+    for (const button of allButtons) {
+        button.classList.add('bg-[#F7F8F8]');
+        button.classList.remove('bg-[#1DD100]', 'text-white');
+    }
+}
+
 function addSeatDescription(elementId) {
     const seatDescription = document.getElementById('seat-description');
     const newListItem = document.createElement('li');
@@ -86,7 +100,7 @@ function addCoupon() {
         couponButton.classList.add('bg-[#03071233]');
         document.getElementById('coupon-input').setAttribute('disabled', 'true');
     }
-    else if(couponInput === ''){
+    else if (couponInput === '') {
         alert('Enter Coupon Code');
         document.getElementById('coupon-input').value = '';
         isFunctionEnabled = false;
@@ -96,4 +110,38 @@ function addCoupon() {
         document.getElementById('coupon-input').value = '';
         isFunctionEnabled = false;
     }
+}
+
+let phoneNumber = '';
+function checkPhoneNumber() {
+    let phoneNumber = document.getElementById('phone-number').value;
+    if (selectedSeatCount > 0 && phoneNumber !== '') {
+        document.getElementById('success-button').removeAttribute('disabled');
+    }
+}
+
+function continueButton() {
+    document.getElementById('success-button').setAttribute('disabled', 'true');
+    document.getElementById('phone-number').value = '';
+    phoneNumber = '';
+    removeButtonColor();
+
+    document.getElementById('seat-left').innerText = 40;
+    document.getElementById('selected-seat-count').innerText = 0;
+    document.getElementById('total-price').innerText = 0;
+    document.getElementById('grand-price').innerText = 0;
+
+    discountAmount = parseFloat(document.getElementById('discount-amount').innerText);
+    totalPrice = parseFloat(document.getElementById('total-price').innerText);
+    grandPrice = parseFloat(document.getElementById('grand-price'));
+    seatLeft = parseFloat(document.getElementById('seat-left').innerText);
+    selectedSeatCount = parseInt(document.getElementById('selected-seat-count').innerText);
+
+    const parent = document.getElementById('seat-description');
+    const ulChilds = parent.getElementsByTagName('li');
+    const childArray = Array.from(ulChilds);
+    for (const child of childArray) {
+        parent.removeChild(child);
+    }
+    enableButtons();
 }
