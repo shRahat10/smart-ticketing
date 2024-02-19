@@ -22,6 +22,7 @@ function seatSelect(elementId) {
     if (selectedSeatCount === 4) {
         disableButtons();
         document.getElementById('coupon-button').removeAttribute('disabled');
+        document.getElementById('coupon-button').classList.add('bg-[#1DD100]');
         document.getElementById('coupon-input').removeAttribute('disabled');
     }
 }
@@ -89,6 +90,7 @@ function addCoupon() {
         grandPriceF();
         couponButton.disabled = true;
         couponButton.classList.add('bg-[#03071233]');
+        couponButton.classList.remove('bg-[#1DD100]');
         document.getElementById('coupon-input').setAttribute('disabled', 'true');
     }
     else if (couponInput === 'Couple 20') {
@@ -98,17 +100,16 @@ function addCoupon() {
         grandPriceF();
         couponButton.disabled = true;
         couponButton.classList.add('bg-[#03071233]');
+        couponButton.classList.remove('bg-[#1DD100]');
         document.getElementById('coupon-input').setAttribute('disabled', 'true');
     }
     else if (couponInput === '') {
         alert('Enter Coupon Code');
         document.getElementById('coupon-input').value = '';
-        isFunctionEnabled = false;
     }
     else {
         alert('Invalid Coupon Code');
         document.getElementById('coupon-input').value = '';
-        isFunctionEnabled = false;
     }
 }
 
@@ -117,25 +118,40 @@ function checkPhoneNumber() {
     let phoneNumber = document.getElementById('phone-number').value;
     if (selectedSeatCount > 0 && phoneNumber !== '') {
         document.getElementById('success-button').removeAttribute('disabled');
+        document.getElementById('success-button').classList.add('bg-[#1DD100]');
+        document.getElementById('success-button').classList.remove('bg-[#03071233]');
     }
 }
 
 function continueButton() {
     document.getElementById('success-button').setAttribute('disabled', 'true');
     document.getElementById('phone-number').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
     phoneNumber = '';
     removeButtonColor();
 
+    // reseting everything
     document.getElementById('seat-left').innerText = 40;
     document.getElementById('selected-seat-count').innerText = 0;
     document.getElementById('total-price').innerText = 0;
     document.getElementById('grand-price').innerText = 0;
+
+    document.getElementById('discount-amount').innerText = 0;
+    document.getElementById('discount-amount-show').classList.add('hidden');
+    document.getElementById('coupon-input').value = '';
+    document.getElementById('coupon-button').classList.add('bg-[#03071233]');
+    document.getElementById('coupon-button').classList.remove('bg-[#1DD100]');
+    document.getElementById('coupon-input').setAttribute('disabled', 'true');
 
     discountAmount = parseFloat(document.getElementById('discount-amount').innerText);
     totalPrice = parseFloat(document.getElementById('total-price').innerText);
     grandPrice = parseFloat(document.getElementById('grand-price'));
     seatLeft = parseFloat(document.getElementById('seat-left').innerText);
     selectedSeatCount = parseInt(document.getElementById('selected-seat-count').innerText);
+
+    document.getElementById('success-button').classList.remove('bg-[#1DD100]');
+    document.getElementById('success-button').classList.add('bg-[#03071233]');
 
     const parent = document.getElementById('seat-description');
     const ulChilds = parent.getElementsByTagName('li');
