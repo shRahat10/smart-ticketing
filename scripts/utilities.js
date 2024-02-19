@@ -97,6 +97,8 @@ function addCoupon() {
         document.getElementById('coupon-input').setAttribute('disabled', 'true');
         document.getElementById('coupon-input').classList.add('hidden');
         document.getElementById('coupon-button').classList.add('hidden');
+        document.getElementById('input-div').classList.add('bg-[#F7F8F8]');
+        document.getElementById('input-div').classList.remove('bg-white');
     }
     else if (couponInput === 'Couple 20') {
         document.getElementById('discount-amount-show').classList.remove('hidden');
@@ -109,6 +111,8 @@ function addCoupon() {
         document.getElementById('coupon-input').setAttribute('disabled', 'true');
         document.getElementById('coupon-input').classList.add('hidden');
         document.getElementById('coupon-button').classList.add('hidden');
+        document.getElementById('input-div').classList.add('bg-[#F7F8F8]');
+        document.getElementById('input-div').classList.remove('bg-white');
     }
     else if (couponInput === '') {
         alert('Enter Coupon Code');
@@ -159,6 +163,8 @@ function continueButton() {
     
     document.getElementById('coupon-input').classList.remove('hidden');
     document.getElementById('coupon-button').classList.remove('hidden');
+    document.getElementById('input-div').classList.remove('bg-[#F7F8F8]');
+    document.getElementById('input-div').classList.add('bg-white');
 
     discountAmount = parseFloat(document.getElementById('discount-amount').innerText);
     totalPrice = parseFloat(document.getElementById('total-price').innerText);
