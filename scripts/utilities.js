@@ -6,6 +6,11 @@ let seatLeft = parseFloat(document.getElementById('seat-left').innerText);
 let selectedSeatCount = parseInt(document.getElementById('selected-seat-count').innerText);
 
 function seatSelect(elementId) {
+    if (selectedSeatCount === 4) {
+        disableButtons();
+        alert('You have selected 4 tickets. You can not add more');
+        return;
+    }
     const element = document.getElementById(elementId);
     element.classList.add('bg-[#1DD100]', 'text-white');
     element.classList.remove('bg-[#F7F8F8]');
@@ -19,11 +24,9 @@ function seatSelect(elementId) {
     checkPhoneNumber();
 
     if (selectedSeatCount === 4) {
-        disableButtons();
         document.getElementById('coupon-button').removeAttribute('disabled');
         document.getElementById('coupon-button').classList.add('bg-[#1DD100]');
         document.getElementById('coupon-input').removeAttribute('disabled');
-        alert('You have selected 4 tickets. You can not add more');
     }
 }
 
@@ -92,6 +95,8 @@ function addCoupon() {
         couponButton.classList.add('bg-[#03071233]');
         couponButton.classList.remove('bg-[#1DD100]');
         document.getElementById('coupon-input').setAttribute('disabled', 'true');
+        document.getElementById('coupon-input').classList.add('hidden');
+        document.getElementById('coupon-button').classList.add('hidden');
     }
     else if (couponInput === 'Couple 20') {
         document.getElementById('discount-amount-show').classList.remove('hidden');
@@ -102,6 +107,8 @@ function addCoupon() {
         couponButton.classList.add('bg-[#03071233]');
         couponButton.classList.remove('bg-[#1DD100]');
         document.getElementById('coupon-input').setAttribute('disabled', 'true');
+        document.getElementById('coupon-input').classList.add('hidden');
+        document.getElementById('coupon-button').classList.add('hidden');
     }
     else if (couponInput === '') {
         alert('Enter Coupon Code');
@@ -149,6 +156,9 @@ function continueButton() {
     document.getElementById('coupon-button').classList.add('bg-[#03071233]');
     document.getElementById('coupon-button').classList.remove('bg-[#1DD100]');
     document.getElementById('coupon-input').setAttribute('disabled', 'true');
+    
+    document.getElementById('coupon-input').classList.remove('hidden');
+    document.getElementById('coupon-button').classList.remove('hidden');
 
     discountAmount = parseFloat(document.getElementById('discount-amount').innerText);
     totalPrice = parseFloat(document.getElementById('total-price').innerText);
