@@ -113,13 +113,28 @@ function addCoupon() {
     }
 }
 
-let phoneNumber = '';
+// function checkPhoneNumber() {
+//     let phoneNumber = document.getElementById('phone-number').value;
+//     if (selectedSeatCount > 0 && phoneNumber !== '') {
+//         document.getElementById('success-button').removeAttribute('disabled');
+//         document.getElementById('success-button').classList.add('bg-[#1DD100]');
+//         document.getElementById('success-button').classList.remove('bg-[#03071233]');
+//     }
+// }
 function checkPhoneNumber() {
-    let phoneNumber = document.getElementById('phone-number').value;
-    if (selectedSeatCount > 0 && phoneNumber !== '') {
-        document.getElementById('success-button').removeAttribute('disabled');
-        document.getElementById('success-button').classList.add('bg-[#1DD100]');
-        document.getElementById('success-button').classList.remove('bg-[#03071233]');
+    let phoneNumberInput = document.getElementById('phone-number');
+    let successButton = document.getElementById('success-button');
+    let phoneNumber = phoneNumberInput.value;
+
+    if (/^\d+$/.test(phoneNumber)) {
+        successButton.removeAttribute('disabled');
+        successButton.classList.add('bg-[#1DD100]');
+        successButton.classList.remove('bg-[#03071233]');
+    }
+    else {
+        successButton.setAttribute('disabled', 'disabled');
+        successButton.classList.remove('bg-[#1DD100]');
+        successButton.classList.add('bg-[#03071233]');
     }
 }
 
@@ -131,7 +146,6 @@ function continueButton() {
     phoneNumber = '';
     removeButtonColor();
 
-    // reseting everything
     document.getElementById('seat-left').innerText = 40;
     document.getElementById('selected-seat-count').innerText = 0;
     document.getElementById('total-price').innerText = 0;
