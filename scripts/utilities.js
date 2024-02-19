@@ -23,6 +23,7 @@ function seatSelect(elementId) {
         document.getElementById('coupon-button').removeAttribute('disabled');
         document.getElementById('coupon-button').classList.add('bg-[#1DD100]');
         document.getElementById('coupon-input').removeAttribute('disabled');
+        alert('You have selected 4 tickets. You can not add more');
     }
 }
 
