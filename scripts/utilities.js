@@ -117,7 +117,7 @@ function checkPhoneNumber() {
     let successButton = document.getElementById('success-button');
     let phoneNumber = phoneNumberInput.value;
 
-    if (/^\d+$/.test(phoneNumber)) {
+    if (/^\d+$/.test(phoneNumber) && selectedSeatCount > 0) {
         successButton.removeAttribute('disabled');
         successButton.classList.add('bg-[#1DD100]');
         successButton.classList.remove('bg-[#03071233]');
