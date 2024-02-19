@@ -1,4 +1,3 @@
-
 const ticketPrice = parseFloat(document.getElementById('ticket-price').innerText);
 let discountAmount = parseFloat(document.getElementById('discount-amount').innerText);
 let totalPrice = parseFloat(document.getElementById('total-price').innerText);
